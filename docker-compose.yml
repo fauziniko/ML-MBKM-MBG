@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  yolo-api:
+    build: .
+    container_name: yolo-menu-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./model:/app/model
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
